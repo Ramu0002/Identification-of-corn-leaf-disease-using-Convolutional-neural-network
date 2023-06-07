@@ -1,0 +1,94 @@
+/* Set the background color and text color of the body */
+body {
+    background-color: #f7f3f3;
+    color: #333;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: larger;
+    letter-spacing: 2px;
+    background-color: #dbebf6;
+    background-image: url("../static/Background.jpg");
+    background-repeat: no-repeat;
+
+    background-size: 1430px 800px;
+
+  }
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+  /* Center the main heading */
+  h1 {
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    background-color: #099EE1;
+    
+  }
+.button{
+    margin-top: 15px;
+  }
+.button a{
+    width: 150px;
+    border: solid 1px rgb(17, 1, 1);
+    background-color: #4898d9;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+.button a:hover{
+    cursor: pointer;
+    transform: scale(2);
+    background-color: #59b7f1;
+   
+}
+  
+  /* Center the video element */
+  #video {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: solid 5px black;
+    border-radius: 20px;
+  }
+  
+  /* Style the response message */
+  #responseMessage {
+    width: 30%;
+    
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+    border: 1px solid #333;
+    font-size: 18px;
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out forwards;
+    text-transform: uppercase;
+    background-color: #8df44d;
+    border-radius: 5px;
+    color: rgb(16, 15, 15);
+    font-weight: 600;
+    font-size: larger;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -1,0 +1,5 @@
+body{
+    background-image:url('../static/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+}

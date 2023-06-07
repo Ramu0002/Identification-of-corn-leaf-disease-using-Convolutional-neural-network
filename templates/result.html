@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body  {
+  background-image: {{url_for('static',filename = 'Background.jpg')}};;
+  background-repeat: no-repeat;
+  background-size: 1430px 800px;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>image</title>
+</head>
+
+<body >
+    <div class="main">
+        <div class="cam">
+            <h1>Live Camera Capture</h1>
+            <video id="video" width="640" height="480" autoplay></video>
+            <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+        </div>
+        <div class="button">
+            <a href="/captureimage">CAPTURE</a>
+
+        </div>
+
+        <form action="/choosefile" >
+
+        <div class="button">
+            <a href="/choosefile">Choose image</a>
+
+        </div>
+    </form>
+        <div id="responseMessage"></div>
+
+
+    </div>
+    <script>
+        var video = document.getElementById('video');
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var responseMessage = document.getElementById('responseMessage');
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (error) {
+                    console.error('Error accessing the camera: ', error);
+                });
+        } else {
+            console.error('getUserMedia not supported');
+        }
+
+
+        setTimeout(function () {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convert the canvas image to a Blob with JPEG format
+            canvas.toBlob(function (blob) {
+                // Create a FormData object to send the image file
+                var formData = new FormData();
+                formData.append('image_file', blob, 'captured_image.jpg');
+
+                // Send the image file to the Flask backend
+                fetch('/process_image', {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then(function (response) {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Error: ' + response.status);
+                        }
+                    }).then(function (data) {
+                        var predictedLabel = data.predicted;
+                        responseMessage.innerHTML = 'Predicted Label: ' + predictedLabel;
+
+                    })
+                    .catch(function (error) {
+                        console.error('Error sending the image file: ', error);
+                    });
+            }, 'image/jpeg');
+        }, 5000);
+        function showBananaImage(className) {
+            console.log("function called");
+            var bananaElement = document.querySelector('.banana.' + className);
+            bananaElement.classList.add('pop-up');
+            bananaElement.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

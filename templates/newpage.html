@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corn leaf disease Prediction</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            background-color: lightgreen;
+            margin: 0;
+            padding-top: 40px;
+            padding-left: 20px;
+        }
+
+        /* CSS styles for the container */
+        #container {
+            position:fixed;
+            bottom:0;
+            left: ;
+            width: 95%;
+            height: 200px;
+            overflow: hidden;
+            background-color: yellow;
+            border: 2px solid black;
+            border-radius: 12px;
+            padding: 10px;
+        }
+        
+        #content {
+            animation: roll 35s infinite linear;
+            
+        }
+        
+        
+        /* Animation keyframes */
+        @keyframes roll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+        
+        /* CSS styles for the buttons */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            border: none;
+            text-decoration: none;
+            color: white;
+            margin-right: 10px;
+        }
+        
+        /* CSS styles for the logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* CSS styles for the images */
+        .image {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+        }
+      div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;  
+  width: 97%;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+
+
+    </style>
+</head>
+<body background="{{url_for('static',filename = 'Background.jpg')}}">
+
+    <div class="logo">Predict Corn Leaf Disease & Get Cure</div>
+    
+    <div>
+        <a href="#" class="button">Home</a>
+        <a href="/choosefile" class="button">Prediction using local file</a>
+        <a href="/camera" class="button">Prediction using camera</a>
+       
+    </div>
+    <br>
+    <br>
+    <img src={{url_for('static',filename = 'images/Corn_Health.jpg')}} alt="Image 1" class="image">
+    <img src={{url_for('static',filename = 'images/Corn_Blight.jpg')}} alt="Image 2" class="image">
+      <br>
+      <br>
+      <br>
+    
+   
+    
+    
+    <div class="sticky">Recent Advancements</div>
+    
+    <div id="container" >
+     
+      
+        <div id="content">
+           
+            <p>Scientists are developing crop varieties that can withstand extreme weather conditions such as drought, heat, and flooding. These crops have enhanced tolerance to abiotic stresses and can help ensure food security in the face of climate change</p>
+            <p>Researchers are focusing on developing disease-resistant crop varieties through breeding and genetic engineering techniques. These crops are designed to combat specific plant diseases, reducing the need for chemical pesticides and improving crop yield and quality.</p>
+            <p>Scientists are working on developing crops that can efficiently uptake and utilize nutrients from the soil. These crops aim to improve nutrient use efficiency, reduce fertilizer requirements, and minimize nutrient runoff, thus addressing soil degradation and environmental pollution.</p>
+            <p> Advances in genetic engineering techniques allow scientists to modify crops for desired traits such as improved yield, enhanced nutritional value, and resistance to pests, diseases, and environmental stresses.</p>
+            <p>Research is being conducted to develop sustainable soil management practices that improve soil health, fertility, and structure. Techniques such as cover cropping, conservation tillage, and organic amendments help promote soil biodiversity, nutrient cycling, and water retention capacity.</p>
+            <p>IPM strategies involve the use of multiple pest control methods, including biological control agents, pheromones, trap crops, and cultural practices. Research focuses on optimizing IPM approaches to reduce reliance on chemical pesticides and minimize the development of pest resistance</p>
+            <p>Advancements in remote sensing, satellite imagery, and drone-based monitoring systems enable real-time and high-resolution data collection on crop health, growth, and yield. This information aids in timely decision-making, precision management, and resource optimization</p>
+            <p>Research aims to enhance the efficiency of biological nitrogen fixation in crops, reducing reliance on synthetic nitrogen fertilizers. Scientists are exploring novel symbiotic relationships between plants and beneficial microorganisms to improve nitrogen availability in soils</p>
+            <p>Improved irrigation techniques, such as drip irrigation and precision irrigation, help optimize water use in agriculture. Additionally, research focuses on developing water-efficient crop varieties and technologies for real-time soil moisture monitoring.</p>
+            <p>Scientists are investigating alternative pest control methods, such as biopesticides, pheromone-based traps, and sterile insect techniques. These approaches offer environmentally friendly and sustainable pest management solutions</p>
+            <p>Technologies like CRISPR-Cas9 enable precise editing of plant genomes, accelerating the development of desirable traits in crops. Genome editing holds promise for improving crop resistance, nutritional value, and productivity</p>
+            <p>Scientists are studying the plant microbiome—the community of microorganisms associated with plants. Understanding the interactions between plants and their microbiomes can lead to the development of microbial-based biofertilizers, biostimulants, and disease management strategies.</p>
+            <p>Agroecological approaches focus on enhancing biodiversity, soil health, and ecosystem services within agricultural systems. Research explores regenerative practices such as agroforestry, crop rotation, and intercropping to promote sustainable and resilient farming systems.</p>
+            <p>Advanced modeling techniques coupled with big data analytics help predict crop yields, optimize resource allocation, and support decision-making in agriculture. These tools enable farmers to assess risks, plan interventions, and enhance productivity.</p>
+            <p>Phenomics involves the comprehensive measurement of plant traits and responses using high-throughput technologies. Phenomic data provides insights into plant performance, stress tolerance, and adaptation, aiding in crop improvement and breeding programs.
+            </p>
+            <p> Aquaponics combines aquaculture (fish farming) with hydroponics (soilless plant cultivation). This integrated system utilizes fish waste as nutrients for plants, creating a sustainable and efficient food production system with reduced water usage.
+            </p>
+            <p>Biotechnological advancements contribute to the development of biocontrol agents, RNA interference-based pest control, and plant vaccination against diseases. These technologies offer environmentally friendly alternatives to chemical pesticides.</p>
+            <p>Research promotes the cultivation of diverse crop species and varieties to enhance resilience, mitigate pests and diseases, and improve nutrition. Diversified cropping systems contribute to sustainable agriculture and reduce vulnerability to crop failures.</p>
+            <p>Remote sensing technologies, including hyperspectral imaging and thermal imaging, enable early detection of crop stress factors such as nutrient deficiencies, diseases, and drought. Timely detection allows farmers to implement targeted interventions and prevent yield losses.</p>
+            <p>Research focuses on developing improved post-harvest storage, processing, and preservation techniques to reduce food loss and waste. Innovative solutions like modified atmosphere packaging, bio-based coatings, and intelligent packaging systems help extend shelf life and maintain food quality.</p>
+            
+        
+        </div>
+           
+    </div>
+
+    <script>
+        // JavaScript code (optional)
+        // You can use JavaScript to dynamically add or update the content of the container if needed.
+    </script>
+</body>
+</html>
