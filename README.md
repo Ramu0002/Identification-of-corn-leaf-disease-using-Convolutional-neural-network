@@ -1,0 +1,1 @@
+# Identification-of-corn-leaf-disease-using-Convolutional-neural-network
